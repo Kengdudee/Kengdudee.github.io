@@ -1,16 +1,19 @@
 # Kengdudee Apps
 
-Public developer landing page: https://kengdudee.github.io/apps/
+App directory: https://kengdudee.github.io/apps/
+Khamkui product page: https://kengdudee.github.io/apps/khamkui/
 
 The existing root `index.html` is intentionally preserved. GitHub Pages serves
 the `master` branch from the repository root.
 
 ## Contents
 
-- `apps/index.html`: buildless Thai/English landing page, support and existing
-  privacy-policy links. `?lang=th` and `?lang=en` provide direct language links.
+- `apps/index.html`: buildless Thai/English directory linking to each app.
+- `apps/khamkui/index.html`: Khamkui details, App Store link, support and existing
+  privacy-policy links. Both pages support `?lang=th` and `?lang=en`, and internal
+  navigation preserves the selected language.
 - `apps/assets/`: public Khamkui icon and locally served Itim font, with its
-  existing SIL Open Font License.
+  existing SIL Open Font License, shared styles and language-switching script.
 - `/app-ads.txt`: the account-level authorized-seller entry for AdMob publisher
   `pub-5155655533827559`. Keep it at the domain root, not inside `/apps/`.
 
@@ -26,13 +29,15 @@ From the repository root:
 python3 -m http.server 4178 --bind 127.0.0.1
 ```
 
-Open http://127.0.0.1:4178/apps/ and check both languages at mobile and desktop
+Check both /apps/ and /apps/khamkui/ in Thai and English at mobile and desktop
 widths. There is no dependency installation or build step.
 
 ## Store and AdMob setup
 
-Use https://kengdudee.github.io/apps/ as the developer website / Marketing URL
-in the app's App Store listing. Once that link is public, AdMob can discover
+Use https://kengdudee.github.io/apps/khamkui/ as Khamkui's Marketing URL.
+Future apps should have their own /apps/<app-slug>/ page and a directory entry.
+Keep /apps/ as the directory, not a redirect to one app. Once the app's developer
+website link is public, AdMob can discover
 https://kengdudee.github.io/app-ads.txt at the host root.
 
 Publishing this site alone neither updates the App Store listing nor verifies
